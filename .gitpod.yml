@@ -1,12 +1,12 @@
-FROM gitpod/workspace-full:latest
-
-LABEL authors="Sukhi Singh"
-
-
+image:
+    file: Dockerfile
 #Angular CLI
-RUN npm install -g @angular/cli
+tasks:
+ - init: touch logs.txt  &&
+         mkdir test
+ - command: npm install -g npm &&
+            npm install -g @angular/cli
 
 # Ports to expose on workspace startup (optional)
 ports:
   - port: 4200
-    onOpen: open-preview
