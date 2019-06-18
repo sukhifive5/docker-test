@@ -1,1 +1,12 @@
+FROM gitpod/workspace-full:latest
 
+LABEL authors="Sukhi Singh"
+
+
+#Angular CLI
+RUN npm install -g @angular/cli
+
+# Ports to expose on workspace startup (optional)
+ports:
+  - port: 4200
+    onOpen: open-preview
