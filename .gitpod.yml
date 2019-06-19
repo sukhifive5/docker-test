@@ -2,10 +2,14 @@ image:
     file: Dockerfile
 #Angular CLI
 tasks:
- - init: touch logs.txt  &&
+ - init:
+        touch logs.txt  &&
          mkdir test
- - command: npm install -g npm &&
-            npm install -g @angular/cli
+ - command: >
+            echo "Starting .gitpod.yml installation\n\n"           &>> /workspace/docker-test/logs.txt  &&
+            npm install -g npm &&
+            echo "n" | npm install -g @angular/cli
+
 
 # Ports to expose on workspace startup (optional)
 ports:
